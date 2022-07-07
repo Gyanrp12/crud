@@ -26,6 +26,8 @@ class UserAPI(APIView):
         id=pk
         usr = User.objects.get(id=id)
         ser = UserSerializer(usr, data=request.data, partial=True)
+        print("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^",ser)
+        
         if ser.is_valid():
             
             ser.save()
